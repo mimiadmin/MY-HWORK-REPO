@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: netflix-app
+  namespace: prod-env
+  labels:
+    app: netflix-app
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80 #application exposed port
+  selector:
+    app: netflix-app
